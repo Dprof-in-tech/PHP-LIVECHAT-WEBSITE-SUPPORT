@@ -1,0 +1,128 @@
+/* Reset default margin and padding */
+body, div, p, h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+}
+
+/* Set a base font size and line height */
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Create a responsive chat interface */
+#chat-box {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+#chat-messages {
+    max-height: 90vh;
+    overflow-y: scroll;
+}
+
+.chat-box .message {
+    padding: 10px;
+    margin: 5px;
+    border-radius: 8px;
+    clear: both;
+    font-size: 16px;
+}
+
+.user-message {
+    background-color: #DCF8C6;
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    margin: .3rem;
+    border-top-right-radius: 12px;
+    float: left;
+    clear: both;
+}
+
+.admin-message {
+    background-color: #E8E8E8;
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    margin: .3rem;
+    border-top-left-radius: 12px;
+    float: right;
+    clear: both;
+}
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+#message-input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-top: 1px solid #ccc;
+    outline: none;
+    font-size: 16px;
+}
+
+.submit_area {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: white;
+}
+
+#send-button {
+    background-color: #00BFA5;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    outline: none;
+}
+
+.user {
+    background-color: #00BFA5;
+    color: white;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Media query for smaller screens */
+@media only screen and (max-width: 765px) {
+    #chat-box {
+        border-radius: 0;
+        height: 100vh;
+        width: 100%;
+    }
+    #chat-messages{
+        height: 85vh;
+    }
+    .chat-box .message {
+        font-size: 14px;
+    }
+
+    #message-input {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .submit_area {
+        padding: 8px;
+    }
+
+    #send-button {
+        width: 30px;
+        height: 30px;
+    }
+
+    .user {
+        font-size: 16px;
+    }
+}
