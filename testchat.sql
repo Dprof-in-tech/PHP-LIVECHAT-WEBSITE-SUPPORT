@@ -17,8 +17,8 @@ CREATE TABLE users (
 );
 
 -- insert some users into the users table
-INSERT INTO users (username, password, email, created_at) VALUES ('Prof', 'admin', '
-  amaechiisaac450@gmail.com',
+INSERT INTO users (username, password, email, status, created_at) VALUES ('Prof', 'admin', '
+  amaechiisaac450@gmail.com', 'inactive',
   CURRENT_TIMESTAMP);
 
  
