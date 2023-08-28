@@ -2,6 +2,7 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
+session_start();
 //retrieve user id from users.php page
 $user_id = $_GET['id'];
 require "connect.php";
@@ -11,6 +12,7 @@ $sql = "SELECT * FROM users WHERE id = $user_id";
 $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_assoc($result);
 $user_name = $row['username'];
+
 
 ?>
 
@@ -40,7 +42,7 @@ $user_name = $row['username'];
             </div>
         </div>
     </form>
-    <script src="script.js"></script>
+    <script src="script2.js"></script>
 </body>
 </html>
 

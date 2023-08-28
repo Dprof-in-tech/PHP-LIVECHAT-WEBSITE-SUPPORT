@@ -21,8 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
     
                     if (message.sender === "Admin") {
                         chatBox.classList.add("admin-message");
-                    } else
-                    {
+                    } else {
                         chatBox.classList.add("user-message");
                     }
     
@@ -33,10 +32,6 @@ document.addEventListener("DOMContentLoaded", function () {
             });
     }
     
-
     getChatMessages();
     setInterval(getChatMessages, 3000); // Fetch messages every 5 seconds
-
-   
-    
-});
+})    

@@ -1,9 +1,19 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 session_start();
 require "send_message.php";
 require "connect.php";
 //retreive session variable
 $username = $_SESSION['username'];
+
+//query to get user details
+$sql = "SELECT * FROM users WHERE username = '$username'";
+
+$result = mysqli_query($conn, $sql);
+$row = mysqli_fetch_assoc($result);
+$user_name = $row['username'];
 ?>
 
 <!DOCTYPE html>
@@ -25,7 +35,7 @@ $username = $_SESSION['username'];
             </div>
             <div class="submit_area">
                 <input type="hidden" id="reciever" name="reciever" value="Admin">
-                <input type="hidden" id="sender" name="sender" value="<?php echo $username;?>">
+                <input type="hidden" id="sender" name="sender" value="<?php echo $user_name;?>">
                 <input name="message" id="message-input" placeholder="Type your message...">
                 <input type="submit" id="send-button" value="&#9829;" name="submit">
             </div>
@@ -33,7 +43,6 @@ $username = $_SESSION['username'];
     </form>
 
 
-    <script src="script2.js"></script>    
+    <script src="script.js"></script>    
 </body>
 </html>
-
